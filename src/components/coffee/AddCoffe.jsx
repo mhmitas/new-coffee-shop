@@ -9,7 +9,7 @@ const AddCoffee = () => {
         handleSubmit,
     } = useForm()
     const onSubmit = (data, e) => {
-        console.log(e.target)
+        // console.log(e.target)
         fetch('http://localhost:3000/coffee', {
             method: 'POST',
             headers: {
@@ -22,12 +22,13 @@ const AddCoffee = () => {
                 console.log(data);
                 if (data.insertedId) {
                     toast.success('New coffee added successfully')
+                    e.target.reset()
                 }
             })
     }
     return (
         <div>
-            <h3 className='hero-content text-2xl font-bold'>Add New Coffee</h3>
+            <h3 className='hero-content text-2xl font-bold text-slate-50'>Add New Coffee</h3>
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className='bg-base-200 p-10'
