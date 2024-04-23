@@ -19,7 +19,7 @@ const AddCoffee = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                     toast.success('New coffee added successfully')
                     e.target.reset()
@@ -62,8 +62,8 @@ const AddCoffee = () => {
 
                     <input
                         {...register("taste")}
-                        type="text"
-                        placeholder="Taste"
+                        type="number"
+                        placeholder="Price"
                         required
                         className="input input-bordered w-full" />
                     <input
