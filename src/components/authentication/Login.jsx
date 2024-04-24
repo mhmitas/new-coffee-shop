@@ -18,7 +18,6 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 e.target.reset()
-
             })
             .catch(error => {
                 console.log(error.message);

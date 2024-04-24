@@ -29,6 +29,7 @@ const Register = () => {
                         console.log('Successfully added user');
                         console.log(data);
                     })
+                e.target.reset()
             })
             .catch(error => {
                 console.log(error.message);
