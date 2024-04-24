@@ -13,6 +13,7 @@ import CoffeDetail from './components/coffee/CoffeDetail';
 import Login from './components/authentication/Login';
 import Register from './components/authentication/Register';
 import AuthProvider from './components/authentication/provider/Provider';
+import CoffeeProvider from './components/authentication/provider/CoffeeProvider';
 
 const router = createBrowserRouter([
   {
@@ -52,7 +53,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <CoffeeProvider>
+        <RouterProvider router={router} />
+      </CoffeeProvider>
     </AuthProvider>
   </React.StrictMode>,
 )

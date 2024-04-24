@@ -1,18 +1,13 @@
-import React, { createContext } from 'react';
-const CoffeeContext = createContext([])
+import React, { createContext, useState } from 'react';
+export const CoffeeContext = createContext(null)
 const CoffeeProvider = ({ children }) => {
-    const [coffee, setCoffee] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:3000/coffee')
-            .then(res => res.json())
-            .then(data => {
-                setCoffee(data)
-            })
-    }, [])
+    const [coffees, setCoffees] = useState([])
+
+    const coffeeInfo = { coffees, setCoffees }
     return (
-        <div>
+        <CoffeeContext.Provider value={coffeeInfo}>
             {children}
-        </div>
+        </CoffeeContext.Provider>
     );
 };
 

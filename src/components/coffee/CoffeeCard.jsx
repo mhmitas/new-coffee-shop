@@ -1,12 +1,14 @@
+import { useContext, useEffect } from "react";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { MdDeleteOutline, MdEdit } from "react-icons/md";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { CoffeeContext } from "../authentication/provider/CoffeeProvider";
 
 export default function Coffee({ coffee }) {
-    const navigate = useNavigate()
     const { name, chef, photo, taste } = coffee;
     // console.log(coffee._id);
+    const { coffees, setCoffees } = useContext(CoffeeContext)
 
     function handleDelete(id) {
         alert('You are deleting an item')
@@ -18,7 +20,8 @@ export default function Coffee({ coffee }) {
                 // console.log(data);
                 if (data.deletedCount > 0) {
                     toast('Deleted Coffee item')
-                    navigate('/')
+                    const updatedCoffees = coffees.filter(coffee => coffee._id !== id)
+                    setCoffees(updatedCoffees)
                 }
             })
     }

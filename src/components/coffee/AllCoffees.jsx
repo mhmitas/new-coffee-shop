@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Coffee from './CoffeeCard';
+import { CoffeeContext } from '../authentication/provider/CoffeeProvider';
 
 const AllCoffees = () => {
-    const [coffee, setCoffee] = useState([])
+    const { coffees, setCoffees } = useContext(CoffeeContext)
     useEffect(() => {
         fetch('http://localhost:3000/coffee')
             .then(res => res.json())
             .then(data => {
-                setCoffee(data)
+                setCoffees(data)
             })
     }, [])
     return (
@@ -16,9 +17,9 @@ const AllCoffees = () => {
             <div className='hero'>
                 <Link to="addCoffee"><button className='btn btn-primary'>Add Coffee</button></Link>
             </div>
-            <h3 className='hero-content'>{coffee.length}</h3>
+            <h3 className='hero-content'>{coffees.length}</h3>
             <div className='mt-10 grid gap-6 grid-cols-1 md:grid-cols-2'>
-                {coffee.map(c => <Coffee key={c._id} coffee={c}></Coffee>)}
+                {coffees.map(c => <Coffee key={c._id} coffee={c}></Coffee>)}
             </div>
         </div>
     );
