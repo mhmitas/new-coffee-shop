@@ -7,13 +7,14 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAba2B2sHpHZxuZkN3JepJgC_zmcPP8U7A",
-    authDomain: "a9-reindeer-realty.firebaseapp.com",
-    projectId: "a9-reindeer-realty",
-    storageBucket: "a9-reindeer-realty.appspot.com",
-    messagingSenderId: "755781786305",
-    appId: "1:755781786305:web:102f168f9847441b885240"
+    apiKey: "AIzaSyD0RfEnc5d71zBZYc6FG-slbbgmeFcs6b8",
+    authDomain: "espresso-emporium-coffee-c4939.firebaseapp.com",
+    projectId: "espresso-emporium-coffee-c4939",
+    storageBucket: "espresso-emporium-coffee-c4939.appspot.com",
+    messagingSenderId: "659893349721",
+    appId: "1:659893349721:web:5050279704ba8d1296f048"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

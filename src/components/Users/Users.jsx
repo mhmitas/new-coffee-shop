@@ -41,6 +41,7 @@ function User({ user, deleteUser }) {
                 <h3 className='card-title'>Username: {user.name}</h3>
                 <p>Email: {user.email}</p>
                 <p>User Id: {user._id}</p>
+                <p>lastLoggedAt: {user?.lastLoggedAt || 'undefined'}</p>
                 <p>Created: {user?.createdAt}</p>
                 <div className='card-actions justify-end'>
                     <button onClick={() => deleteUser(user._id)} className='btn btn-error'>Delete</button>
