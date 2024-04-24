@@ -15,6 +15,20 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                const createdAt = result.user?.metadata?.creationTime;
+                const user = { name, email, password, createdAt }
+                fetch('http://localhost:3000/users/', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log('Successfully added user');
+                        console.log(data);
+                    })
             })
             .catch(error => {
                 console.log(error.message);
