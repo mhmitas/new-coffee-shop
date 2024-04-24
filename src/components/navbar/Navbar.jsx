@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
     const routes = [
         { name: "Home", path: "/", id: 1 },
-        // { name: "Home", path: "/", id: 1 },
+        { name: "Login", path: "/login", id: 2 },
         // { name: "Home", path: "/", id: 1 },
     ]
     return (
@@ -12,7 +12,7 @@ const Navbar = () => {
             <nav>
                 <div className="navbar bg-base-100 shadow-2xl">
                     <div className="flex-1">
-                        <Link to="/" className="btn btn-ghost text-xl">Mahim Coffee House</Link>
+                        <Link to="/" className="btn btn-ghost text-xl">Mahim's Perfect Cup </Link>
                     </div>
                     <div className="flex-none">
                         <ul className="menu menu-horizontal px-1">
