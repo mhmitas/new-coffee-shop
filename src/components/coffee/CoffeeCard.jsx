@@ -12,7 +12,7 @@ export default function Coffee({ coffee }) {
 
     function handleDelete(id) {
         alert('You are deleting an item')
-        fetch(`http://localhost:3000/coffee/${id}`, {
+        fetch(`https://coffee-house-er-adda2.vercel.app/coffee/${id}`, {
             method: 'delete',
         })
             .then(res => res.json())

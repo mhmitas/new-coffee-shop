@@ -10,7 +10,7 @@ const AddCoffee = () => {
     } = useForm()
     const onSubmit = (data, e) => {
         // console.log(e.target)
-        fetch('http://localhost:3000/coffee', {
+        fetch('https://coffee-house-er-adda2.vercel.app/coffee', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

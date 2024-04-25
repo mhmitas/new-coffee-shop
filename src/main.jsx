@@ -32,12 +32,12 @@ const router = createBrowserRouter([
       {
         path: "/updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
-        loader: ({ params }) => fetch(`http://localhost:3000/coffee/${params.id}`)
+        loader: ({ params }) => fetch(`https://coffee-house-er-adda2.vercel.app/coffee/${params.id}`)
       },
       {
         path: "/coffeeDetail/:id",
         element: <CoffeDetail></CoffeDetail>,
-        loader: ({ params }) => fetch(`http://localhost:3000/coffee/${params.id}`)
+        loader: ({ params }) => fetch(`https://coffee-house-er-adda2.vercel.app/coffee/${params.id}`)
       },
       {
         path: '/login',
