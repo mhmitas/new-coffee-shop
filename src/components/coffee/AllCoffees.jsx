@@ -6,7 +6,7 @@ import { CoffeeContext } from '../authentication/provider/CoffeeProvider';
 const AllCoffees = () => {
     const { coffees, setCoffees } = useContext(CoffeeContext)
     useEffect(() => {
-        fetch('https://coffee-house-er-adda2.vercel.app/coffee')
+        fetch('http://localhost:3000/coffee')
             .then(res => res.json())
             .then(data => {
                 setCoffees(data)

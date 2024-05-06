@@ -14,7 +14,7 @@ const UpdateCoffee = () => {
 
     const onSubmit = (data, e) => {
         // console.log(data);
-        fetch(`https://coffee-house-er-adda2.vercel.app/coffee/${loadedCoffee._id}`, {
+        fetch(`http://localhost:3000/coffee/${loadedCoffee._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
