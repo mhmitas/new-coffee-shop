@@ -5,14 +5,14 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+// secrets are from car doctor project
 const firebaseConfig = {
-    apiKey: "AIzaSyD0RfEnc5d71zBZYc6FG-slbbgmeFcs6b8",
-    authDomain: "espresso-emporium-coffee-c4939.firebaseapp.com",
-    projectId: "espresso-emporium-coffee-c4939",
-    storageBucket: "espresso-emporium-coffee-c4939.appspot.com",
-    messagingSenderId: "659893349721",
-    appId: "1:659893349721:web:5050279704ba8d1296f048"
+    apiKey: "AIzaSyA7LPHtP3sU7voxarL6QwyUooxxp7DMQjQ",
+    authDomain: "car-doctors-mhmitas.firebaseapp.com",
+    projectId: "car-doctors-mhmitas",
+    storageBucket: "car-doctors-mhmitas.appspot.com",
+    messagingSenderId: "299011132300",
+    appId: "1:299011132300:web:90d2d99ef71e33c5f224a9"
 };
 
 

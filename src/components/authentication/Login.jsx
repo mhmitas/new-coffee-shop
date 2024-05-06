@@ -3,6 +3,8 @@ import { FaGoogle } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { AuthContext } from './provider/Provider';
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
 const Login = () => {
     const { loginUser } = useContext(AuthContext)
@@ -12,27 +14,16 @@ const Login = () => {
         const form = e.target
         const email = form.email.value
         const password = form.password.value
-        const user = { email, password }
+        const user = { email }
         // console.log(user);
+        const url = `http://localhost:3000/jwt`
         loginUser(email, password)
             .then(result => {
-                console.log(result.user);
-                const user = {
-                    email,
-                    lastLoggedAt: result.user?.metadata?.lastSignInTime,
-                }
-                fetch(`http://localhost:3000/users`, {
-                    method: 'PATCH',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(user)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                    })
-                e.target.reset()
+                axios.post(url, user, { withCredentials: true })
+                    .then(res => res.data)
+                    .catch(error => console.log(error))
+                toast.success('Login Success')
+                console.log(result.user.email);
             })
             .catch(error => {
                 console.log(error.message);

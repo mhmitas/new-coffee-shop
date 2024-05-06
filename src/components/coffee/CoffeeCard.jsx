@@ -38,14 +38,14 @@ export default function Coffee({ coffee }) {
             </div>
             <div className=" flex flex-col justify-center gap-4 items-center">
                 <Link to={`/coffeeDetail/${coffee._id}`}>
-                    <button className="btn btn-primary p-2"><FaEye className='text-xl' /></button>
+                    <button className="btn btn-primary btn-sm"><FaEye className='text-xl' /></button>
                 </Link>
                 <Link to={`/updateCoffee/${coffee._id}`}>
-                    <button className="btn btn-primary p-2"><MdEdit className='text-xl' /></button>
+                    <button className="btn btn-primary btn-sm"><MdEdit className='text-xl' /></button>
                 </Link>
                 <button
                     onClick={() => handleDelete(coffee._id)}
-                    className="btn btn-primary p-2"><MdDeleteOutline className='text-xl' />
+                    className="btn btn-primary btn-sm"><MdDeleteOutline className='text-xl' />
                 </button>
             </div>
         </div>
