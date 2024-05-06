@@ -2,14 +2,17 @@ import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Coffee from './CoffeeCard';
 import { CoffeeContext } from '../authentication/provider/CoffeeProvider';
+import axios from 'axios';
 
 const AllCoffees = () => {
     const { coffees, setCoffees } = useContext(CoffeeContext)
+
+    const url = `http://localhost:3000/coffee`
     useEffect(() => {
-        fetch('http://localhost:3000/coffee')
-            .then(res => res.json())
-            .then(data => {
-                setCoffees(data)
+        axios.get(url, { withCredentials: true })
+            .then(res => {
+                console.log(res.data);
+                setCoffees(res.data)
             })
     }, [])
     return (
